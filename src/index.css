@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 96%;
+    --foreground: 150 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 15%;
+
+    --primary: 145 70% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 42 90% 55%;
+    --secondary-foreground: 150 30% 15%;
+
+    --muted: 150 10% 90%;
+    --muted-foreground: 150 10% 40%;
+
+    --accent: 145 50% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 10% 85%;
+    --input: 150 10% 85%;
+    --ring: 145 70% 25%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --header-bg: 145 70% 22%;
+    --header-foreground: 0 0% 100%;
+    --banner-gradient: linear-gradient(135deg, hsl(145 70% 25%) 0%, hsl(145 60% 30%) 100%);
+    --gold: 42 90% 55%;
+    --gold-dark: 38 85% 45%;
+    --notice-header: 145 65% 28%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 150 20% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 150 20% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 150 20% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 145 60% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 42 80% 50%;
+    --secondary-foreground: 150 30% 10%;
+
+    --muted: 150 15% 18%;
+    --muted-foreground: 150 10% 60%;
+
+    --accent: 145 50% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 15% 20%;
+    --input: 150 15% 20%;
+    --ring: 145 60% 40%;
+
+    --header-bg: 145 70% 18%;
+    --header-foreground: 0 0% 100%;
+    --notice-header: 145 60% 30%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .header-nav {
+    @apply bg-[hsl(var(--header-bg))] text-[hsl(var(--header-foreground))];
+  }
+
+  .banner-gradient {
+    background: var(--banner-gradient);
+  }
+
+  .quick-action-card {
+    @apply bg-card rounded-xl p-4 flex flex-col items-center justify-center gap-2 
+           hover:shadow-lg transition-all duration-300 cursor-pointer
+           border border-border hover:border-primary/30;
+  }
+
+  .quick-action-icon {
+    @apply w-12 h-12 rounded-full flex items-center justify-center
+           bg-primary/10 text-primary;
+  }
+
+  .notice-tab {
+    @apply px-4 py-2 text-sm font-medium transition-colors cursor-pointer
+           border-b-2 border-transparent hover:text-primary;
+  }
+
+  .notice-tab-active {
+    @apply text-primary border-primary;
+  }
+
+  .gold-accent {
+    @apply text-[hsl(var(--gold))];
+  }
+
+  .gold-bg {
+    @apply bg-[hsl(var(--gold))];
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
